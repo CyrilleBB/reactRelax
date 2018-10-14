@@ -25,6 +25,11 @@ class App extends Component {
     });
   };
 
+  toggleMenu = () => {
+    const menu = document.querySelector("ul");
+    menu.style.display = "none";
+  };
+
   render() {
     return (
       <div className="App">
@@ -36,6 +41,7 @@ class App extends Component {
               </div>
             </div>
           </div>
+
           <img id="background" src={this.state.imageURL} alt="pluie" />
           <audio src={this.state.sonUrl} autoPlay loop />
           <ul>
