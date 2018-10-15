@@ -11,7 +11,7 @@ class Campagne extends Component {
     this.props.addElement(this.state);
   };
   render() {
-    return <li onClick={this.changeElement}>Campagne</li>;
+    return <li onClick={this.changeElement}>campagne</li>;
   }
 }
 
