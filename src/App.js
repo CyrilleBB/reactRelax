@@ -1,16 +1,12 @@
 import React, { Component } from "react";
-// import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
+import Foret from "./Components/foret";
+import Campagne from "./Components/campagne";
+import Montagne from "./Components/montagne";
+import Mer from "./Components/mer";
+import Pluie from "./Components/pluie";
 import pluie from "./assets/img/pluie.jpg";
-import foret from "./assets/img/foret.jpg";
-import campagne from "./assets/img/campagne.png";
-import montagne from "./assets/img/montagne.jpg";
-import mer from "./assets/img/mer.jpg";
 import pluieSon from "./assets/audio/pluieSon.mp3";
-import foretSon from "./assets/audio/foretSon.mp3";
-import campagneSon from "./assets/audio/campagneSon.mp3";
-import montagneSon from "./assets/audio/montagneSon.mp3";
-import merSon from "./assets/audio/merSon.mp3";
 
 class App extends Component {
   state = {
@@ -18,16 +14,14 @@ class App extends Component {
     sonUrl: pluieSon
   };
 
-  change = (uneImage, unSon) => {
+  addElement = nature => {
+    console.log(nature.imageURL);
+    let imageUrl = nature.imageURL;
+    let sonNature = nature.sonUrl;
     this.setState({
-      imageURL: uneImage,
-      sonUrl: unSon
+      imageURL: imageUrl,
+      sonUrl: sonNature
     });
-  };
-
-  toggleMenu = () => {
-    const menu = document.querySelector("ul");
-    menu.style.display = "none";
   };
 
   render() {
@@ -45,41 +39,11 @@ class App extends Component {
           <img id="background" src={this.state.imageURL} alt="pluie" />
           <audio src={this.state.sonUrl} autoPlay loop />
           <ul>
-            <li
-              onClick={() => {
-                this.change(montagne, montagneSon);
-              }}
-            >
-              Montagne
-            </li>
-            <li
-              onClick={() => {
-                this.change(mer, merSon);
-              }}
-            >
-              mer
-            </li>
-            <li
-              onClick={() => {
-                this.change(campagne, campagneSon);
-              }}
-            >
-              campagne
-            </li>
-            <li
-              onClick={() => {
-                this.change(foret, foretSon);
-              }}
-            >
-              foret
-            </li>
-            <li
-              onClick={() => {
-                this.change(pluie, pluieSon);
-              }}
-            >
-              pluie
-            </li>
+            <Montagne addElement={this.addElement} />
+            <Mer addElement={this.addElement} />
+            <Campagne addElement={this.addElement} />
+            <Pluie addElement={this.addElement} />
+            <Foret addElement={this.addElement} />
           </ul>
         </div>
       </div>
