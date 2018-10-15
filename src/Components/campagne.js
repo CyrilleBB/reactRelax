@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import campagne from "../assets/img/campagne.png";
+import campagne from "../assets/img/campagne.jpg";
 import campagneSon from "../assets/audio/campagneSon.mp3";
 
 class Campagne extends Component {

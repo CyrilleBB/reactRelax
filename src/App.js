@@ -5,13 +5,13 @@ import Campagne from "./Components/campagne";
 import Montagne from "./Components/montagne";
 import Mer from "./Components/mer";
 import Pluie from "./Components/pluie";
-import pluie from "./assets/img/pluie.jpg";
-import pluieSon from "./assets/audio/pluieSon.mp3";
+import campagne from "./assets/img/campagne.jpg";
+import campagneSon from "./assets/audio/campagneSon.mp3";
 
 class App extends Component {
   state = {
-    imageURL: pluie,
-    sonUrl: pluieSon
+    imageURL: campagne,
+    sonUrl: campagneSon
   };
 
   addElement = nature => {
@@ -36,7 +36,7 @@ class App extends Component {
             </div>
           </div>
 
-          <img id="background" src={this.state.imageURL} alt="pluie" />
+          <img src={this.state.imageURL} alt="pluie" />
           <audio src={this.state.sonUrl} autoPlay loop />
           <ul>
             <Montagne addElement={this.addElement} />
