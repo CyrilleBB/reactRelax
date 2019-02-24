@@ -93,3 +93,22 @@ li {
     content: "expire";
   }
 }
+
+
+@media screen and (max-width:500px) {
+  #boite {
+    top: 25vh;
+    left: 25vw;
+    width: 200px;
+    height: 200px;
+  }
+
+  #cercle {
+    width: 100px;
+    height: 100px;
+  }
+
+  #respire::after {
+    left: 15%;
+  }
+}
